@@ -1,15 +1,18 @@
-NAME = zombie
+NAME = brain
 
-INC =	Zombie.hpp
+INC =	HumanA.hpp \
+	HumanB.hpp \
+	Weapon.hpp
 	
 CC = c++
 
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
-SRC =	main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp
-	
 
+SRC =	main.cpp \
+	Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp
+	
 OBJS = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJS)

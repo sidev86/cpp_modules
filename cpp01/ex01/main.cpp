@@ -2,12 +2,15 @@
 
 int	main(void)
 {
-	Zombie *heapZombie;
+	Zombie *horde;
+	int i = 0;
+	int num_zombies = 10;
+	horde = zombieHorde(num_zombies, "Wittell");
 	
-	heapZombie = newZombie("Frank");
-	heapZombie->announce();
-	
-	randomChump("Oski");
-	
-	delete (heapZombie);
+	while (i < num_zombies)
+	{
+		horde[i].announce();
+		i++;
+	}
+	delete [] horde;
 }
