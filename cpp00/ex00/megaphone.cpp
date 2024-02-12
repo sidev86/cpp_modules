@@ -11,7 +11,6 @@ void megaphoneString(char *str)
 		c = std::toupper(str[i++]);
 		std::cout << c;
 	}
-
 }
 int	main(int argc, char **argv)
 {

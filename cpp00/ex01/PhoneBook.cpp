@@ -3,12 +3,13 @@
 int PhoneBook::_numOfContacts = 0;
 int PhoneBook::_contactIndex = 0;
 
-PhoneBook::PhoneBook( void ) {
+PhoneBook::PhoneBook( void ) 
+{
 }
 
-PhoneBook::~PhoneBook( void ) {
+PhoneBook::~PhoneBook( void ) 
+{
 }
-
 
 void PhoneBook::PrintField(std::string str)
 {
@@ -31,7 +32,6 @@ void PhoneBook::PrintHeader( void )
 	std::cout << "|        | First  |  Last  | Nick   |" << std::endl;
 	std::cout << "| Index  |  Name  |  Name  | Name   |" << std::endl;
 	std::cout << "|________|________|________|________|" << std::endl;
-
 }
 
 void PhoneBook::ShowContactDetails(int index)
@@ -44,7 +44,8 @@ void PhoneBook::ShowContactDetails(int index)
 	std::cout << "DARK SECRET -> " << PhoneBook::contacts[index].getDarkSecret() << std::endl;
 }
 
-void PhoneBook::Add ( void ) {
+void PhoneBook::Add ( void ) 
+{
 	std::string input;
 	
 	std::cout << "Insert first name: ";
@@ -67,16 +68,17 @@ void PhoneBook::Add ( void ) {
 	PhoneBook::_contactIndex++;
 	if (_contactIndex > 7)
 		_contactIndex = 0; 
-	//std::cout << "Number of contacts = " << _numOfContacts << std::endl;
 	std::cout << "CONTACT ADDED TO PHONEBOOK!" << std::endl;
 	return ;
 }
 
-void PhoneBook::Search ( void ) {
+void PhoneBook::Search ( void ) 
+{
 	std::string str;
 	std::string strIndex;
 	int index;
 	int	i = 0; 
+	
 	if (_numOfContacts > 0)
 		PrintHeader();
 	while (i < _numOfContacts)
@@ -100,7 +102,6 @@ void PhoneBook::Search ( void ) {
 		ShowContactDetails(index-1);
 	else
 		std::cout << "Index does not exist!" << std::endl;
-	//std::cout << "index = " << index << std::endl;
 	std::cout << std::endl;
 	return ;
 }

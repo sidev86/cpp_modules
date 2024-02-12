@@ -25,7 +25,4 @@ class PhoneBook
 		static int _contactIndex;	
 };
 
-
-
-
 #endif

@@ -1,14 +1,13 @@
 #include <stdlib.h>
 #include "PhoneBook.hpp"
 
-int	main(){
-	
+int	main()
+{
 	PhoneBook pb;
 	std::string command;
 	system("cls || clear");
 	while(1)
 	{
-		
 		std::cout << "               ** COOL SKETCHY PHONEBOOK **" << std::endl;
 		std::cout << std::endl;
 		std::cout << "COMMAND LIST:"<< std::endl;
