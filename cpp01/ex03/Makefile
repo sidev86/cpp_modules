@@ -1,8 +1,9 @@
-NAME = brain
+NAME = weapon
 
-INC =	HumanA.hpp \
-	HumanB.hpp \
-	Weapon.hpp
+INC =	Weapon.hpp \
+	HumanA.hpp \
+	HumanB.hpp
+	
 	
 CC = c++
 

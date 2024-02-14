@@ -2,7 +2,7 @@
 
 Zombie *newZombie ( std::string name )
 {
-	Zombie *aZombie = new Zombie;
-	aZombie->setName(name);
-	return (aZombie);
+	Zombie *heapZombie = new Zombie;
+	heapZombie->setName(name);
+	return (heapZombie);
 }

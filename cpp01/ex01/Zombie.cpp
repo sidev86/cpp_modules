@@ -5,11 +5,6 @@ Zombie::Zombie(void)
 	this->_name = "noname";
 }
 
-Zombie::Zombie(std::string name)
-{
-	this->setName(name);
-}
-
 Zombie::~Zombie(void)
 {
 	std::cout << "Zombie -> " << this->_name << std::endl;
