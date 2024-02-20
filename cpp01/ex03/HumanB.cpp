@@ -18,7 +18,7 @@ void	HumanB::setWeapon(Weapon& weapon)
 void	HumanB::attack(void)
 {
 	if (this->_weapon == NULL)
-		std::cout << this->_name << " doesn't have weapons" << std::endl;
+		std::cout << this->_name << " doesn't have a weapon" << std::endl;
 	else
 		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }

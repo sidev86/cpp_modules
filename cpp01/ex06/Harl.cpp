@@ -34,7 +34,6 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	int i = 0;
-	t_funcptr message[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string msg_level[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	
 	while (i < 4  && level != msg_level[i])
@@ -45,10 +44,26 @@ void	Harl::complain(std::string level)
 		while (i < 4)
 		{
 			std::cout << "[ " << msg_level[i] << " ]" << std::endl;
-			(this->*message[i++])();
+			switch (i)
+			{
+				case (0):
+					this->debug();
+					break;
+				case (1):
+					this->info();
+					break;
+				case (2):
+					this->warning();
+					break;
+				case (3):
+					this->error();
+					break;
+				default:
+					break;
+			}
+			i++;
 		}
 	}
-	else 	
+	else
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-	
 }
