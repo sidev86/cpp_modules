@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/12 10:32:21 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/02/12 10:32:23 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp" 
 #include <iostream>
 
@@ -48,7 +60,8 @@ bool Account::makeWithdrawal(int withdrawal)
                   << ";withdrawal:" << withdrawal << ";amount:" << _amount
                   << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
         return true;
-    } else 
+    } 
+    else 
     {
         _displayTimestamp();
         std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:refused" << std::endl;
