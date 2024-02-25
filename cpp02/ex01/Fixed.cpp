@@ -7,7 +7,7 @@ Fixed::Fixed( void )
 }
 
 
-Fixed::Fixed( const int int_num)
+Fixed::Fixed(const int int_num)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_fixed_num = int_num << _fract_bits;
@@ -20,7 +20,7 @@ Fixed::Fixed(const float float_num)
 	//std::cout << this->_fixed_num << std::endl;
 }
 
-Fixed::Fixed( const Fixed& other )
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
