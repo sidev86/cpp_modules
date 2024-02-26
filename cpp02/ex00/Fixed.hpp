@@ -13,11 +13,8 @@ class Fixed
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		
-		void operator=(Fixed& other)
-		{
-			std::cout << "Copy assignment operator called" << std::endl;
-			this->fixed_num = other.getRawBits();
-		}
+		Fixed& operator=(Fixed& other);
+		
 	
 	private: 
 		int fixed_num;

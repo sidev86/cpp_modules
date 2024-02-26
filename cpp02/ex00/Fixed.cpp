@@ -18,6 +18,13 @@ Fixed::~Fixed( void )
 	std::cout << "Destructor called" << std::endl;
 }
 
+Fixed& Fixed::operator=(Fixed& other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->fixed_num = other.getRawBits();
+	return *this;
+}
 
 int Fixed::getRawBits( void ) const
 {

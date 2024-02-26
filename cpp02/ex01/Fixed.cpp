@@ -46,6 +46,14 @@ int Fixed::toInt( void ) const
 
 }
 
+Fixed& Fixed::operator=(const Fixed& other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->_fixed_num = other.getRawBits();
+	return *this;
+}
+
 std::ostream& operator<<(std::ostream& COUT, const Fixed& fixed)
 {
 	COUT << fixed.toFloat();

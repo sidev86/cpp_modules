@@ -18,14 +18,7 @@ class Fixed
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		
-		Fixed& operator=(const Fixed& other)
-		{
-			//std::cout << "Copy assignment operator called" << std::endl;
-			if (this != &other)
-				this->_fixed_num = other.getRawBits();
-			//std::cout << "fixednum = " << this->_fixed_num << std::endl; 
-			return *this;
-		}
+		Fixed& operator=(const Fixed& other);
 		
 		bool operator>(const Fixed& other) const;
 		bool operator<(const Fixed& other) const;
@@ -39,9 +32,9 @@ class Fixed
 		Fixed operator*(const Fixed& other) const;
 		Fixed operator/(const Fixed& other) const;
 		
-		Fixed& operator++(); // Pre-increment
-		Fixed operator++(int); // Post-increment
-		Fixed& operator--(); // Pre-decrement
+		Fixed& operator++(); 
+		Fixed operator++(int); 
+		Fixed& operator--(); 
 		Fixed operator--(int); 
 		
 		static Fixed& min(Fixed& a, Fixed& b);
