@@ -17,19 +17,15 @@ class ClapTrap
 		int getHealthPoints( void );
 		int getEnergyPoints( void );
 		std::string getName( void );
-		ClapTrap& operator=( const ClapTrap& other )
-		{
-			if (this != &other)
-				*this = other; 
-			return *this;
-		}
+		ClapTrap& operator=( const ClapTrap& other );
+		
 	
 	
 	private:
 		std::string _name;
 		int _hp;
-		int _ep;
-		int _damage;
+		unsigned int _ep;
+		unsigned int _damage;
 	
 };
 
