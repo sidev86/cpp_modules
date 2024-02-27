@@ -4,6 +4,7 @@ int	main()
 {
 	ClapTrap ct1("ct1");  
 	ClapTrap ct2("ct2");
+	//ClapTrap ct3;
 	
 	ct1.setDamage(10);
 	ct1.attack(ct2.getName());

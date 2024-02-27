@@ -1,4 +1,4 @@
-NAME = fragtrap
+NAME = diamondtrap
 
 INC =	ClapTrap.hpp \
 	ScavTrap.hpp \

@@ -1,8 +1,13 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void)
+{
+	std::cout << "Default (fragtrap) constructor" << std::endl;
+}
+
 FragTrap::FragTrap(const std::string& _name) : ClapTrap(_name)
 {
-	std::cout << "Default constructor (fragtrap)" << std::endl;
+	std::cout << "Fragtrap constructor" << std::endl;
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_damage = 30;

@@ -1,9 +1,15 @@
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _damage(0)
+
+ClapTrap::ClapTrap(void)
 {
 	std::cout << "Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _damage(0)
+{
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -49,6 +55,19 @@ std::string ClapTrap::getName(void)
 {
 	return this->_name;
 }
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hp = other._hp;
+		this->_ep = other._ep;
+		this->_damage = other._damage;
+	}
+	return *this;
+}
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hp > 0)

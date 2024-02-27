@@ -6,6 +6,7 @@
 class ClapTrap
 {
 	public:
+		ClapTrap( void );
 		ClapTrap( std::string name ); 
 		ClapTrap( const ClapTrap& other );
 		~ClapTrap( void );
@@ -17,12 +18,7 @@ class ClapTrap
 		int getHealthPoints( void );
 		int getEnergyPoints( void );
 		std::string getName( void );
-		ClapTrap& operator=( const ClapTrap& other )
-		{
-			if (this != &other)
-				*this = other; 
-			return *this;
-		}
+		ClapTrap& operator=( const ClapTrap& other );
 	
 	
 	protected:
