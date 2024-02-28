@@ -6,7 +6,7 @@ int	main()
 	ClapTrap ct2("ct2");
 	//ClapTrap ct3;
 	
-	ct1.setDamage(10);
+	ct1.setDamage(3);
 	ct1.attack(ct2.getName());
 	ct1.beRepaired(2);
 	std::cout << ct1.getName() << " now has " << ct1.getEnergyPoints() << " energy points" << std::endl;

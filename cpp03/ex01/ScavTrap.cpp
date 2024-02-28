@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(const std::string& _name) : ClapTrap(_name)
 
 void ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << this->_name << " is now in gate keeper mode" << std::endl; 
+	std::cout << "Scavtrap " << this->_name << " is now in gate keeper mode" << std::endl; 
 } 
 
 ScavTrap::~ScavTrap(void)

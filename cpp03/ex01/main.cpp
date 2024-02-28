@@ -5,8 +5,6 @@ int main()
     // Testing ClapTrap
     {
         ClapTrap claptrap("ClapTrap1");
-        ClapTrap claptrap2; 
-        claptrap2 = claptrap;
         claptrap.setDamage(3);
         claptrap.attack("Target1");
         claptrap.takeDamage(5);

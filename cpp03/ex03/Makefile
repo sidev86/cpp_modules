@@ -2,7 +2,8 @@ NAME = diamondtrap
 
 INC =	ClapTrap.hpp \
 	ScavTrap.hpp \
-	FragTrap.hpp
+	FragTrap.hpp \
+	DiamondTrap.hpp
 	
 CC = c++
 
@@ -10,7 +11,8 @@ FLAGS = -g -Wall -Wextra -Werror -std=c++98
 SRC =	main.cpp \
 	ClapTrap.cpp \
 	ScavTrap.cpp \
-	FragTrap.cpp
+	FragTrap.cpp \
+	DiamondTrap.cpp
 	
 
 OBJS = $(SRC:.cpp=.o)
