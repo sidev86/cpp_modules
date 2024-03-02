@@ -6,10 +6,9 @@ Animal::Animal(void)
 	std::cout << "Default constructor (Animal) called" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
+Animal::Animal(const Animal& other) : _type(other._type)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
 }
 
 std::string Animal::getType(void) const
@@ -19,7 +18,14 @@ std::string Animal::getType(void) const
 
 void Animal::makeSound(void) const
 {
-	std::cout << "Generic Animal sound" << std::endl;
+	std::cout << "Animal sound" << std::endl;
+}
+
+Animal& Animal::operator=( const Animal& other )
+{
+	if (this != &other)
+		this->_type = other._type; 
+	return *this;
 }
 
 Animal::~Animal(void)

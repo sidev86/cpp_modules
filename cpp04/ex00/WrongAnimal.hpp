@@ -14,12 +14,7 @@ class WrongAnimal
 	protected:
 		std::string _type;
 	
-	WrongAnimal& operator=( const WrongAnimal& other )
-	{
-		if (this != &other)
-			*this = other; 
-		return *this;
-	}
+	WrongAnimal& operator=( const WrongAnimal& other );
 };
 
 #endif

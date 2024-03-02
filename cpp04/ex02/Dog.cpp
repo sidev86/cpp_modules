@@ -12,6 +12,16 @@ void Dog::makeSound(void) const
 	std::cout << "Woooof Wooofff" << std::endl;
 }
 
+Dog& Dog::operator=( const Dog& other )
+{
+	if (this != &other)
+	{
+		this->_type = other._type; 
+		this->_brain = new Brain(*other._brain);
+	}
+	return *this;
+}
+
 Dog::~Dog()
 {
 	std::cout << "Destructor (dog) called" << std::endl;

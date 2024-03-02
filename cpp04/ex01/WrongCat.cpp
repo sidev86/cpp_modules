@@ -2,13 +2,13 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	this->_type = "WrongCat";
+	WrongAnimal::_type = "WrongCat";
 	std::cout << "Default constructor (wrongcat) called" << std::endl;
 }
 
 void WrongCat::makeSound(void) const
 {
-	std::cout << "Meeeoooooowwwwwww" << std::endl;
+	std::cout << "Wrong Meeeoooooowwwwwww" << std::endl;
 }
 
 WrongCat::~WrongCat()

@@ -19,7 +19,7 @@ int main()
 		animals[i] = new Cat();
 		
 	for ( int i = 0; i < 10; i++ ) {
-	delete animals[i];
+		delete animals[i];
 	}
 
 	return 0;

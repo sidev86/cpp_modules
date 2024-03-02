@@ -12,15 +12,7 @@ class Dog : public AAnimal
 		~Dog( void );
 	private:
 		Brain* _brain;
-	Dog& operator=( const Dog& other )
-	{
-		if (this != &other)
-		{
-			this->_type = other._type; 
-			this->_brain = new Brain(*other._brain);
-		}
-		return *this;
-	}
+	Dog& operator=( const Dog& other );
 };
 
 #endif

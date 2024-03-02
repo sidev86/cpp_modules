@@ -13,13 +13,8 @@ class Animal
 		virtual ~Animal( void );
 	protected:
 		std::string _type;
-	
-	Animal& operator=( const Animal& other )
-	{
-		if (this != &other)
-			*this = other; 
-		return *this;
-	}
+			
+	Animal& operator=( const Animal& other );
 };
 
 #endif

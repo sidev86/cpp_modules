@@ -13,15 +13,7 @@ class Cat : public Animal
 	private:
 		Brain* _brain;
 		
-	Cat& operator=( const Cat& other )
-	{
-		if (this != &other)
-		{
-			this->_type = other._type; 
-			this->_brain = new Brain(*other._brain);
-		}
-		return *this;
-	}
+	Cat& operator=( const Cat& other );
 };
 
 #endif

@@ -12,6 +12,16 @@ void Cat::makeSound(void) const
 	std::cout << "Meeeoooooowwwwwww" << std::endl;
 }
 
+Cat& Cat::operator=( const Cat& other )
+{
+	if (this != &other)
+	{
+		this->_type = other._type; 
+		this->_brain = new Brain(*other._brain);
+	}
+	return *this;
+}
+
 Cat::~Cat()
 {
 	std::cout << "Destructor (cat) called" << std::endl;

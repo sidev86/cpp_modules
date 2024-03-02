@@ -9,16 +9,8 @@ class Brain
 		Brain( void );
 		Brain( const Brain& other );
 		~Brain( void );
-		Brain& operator=( const Brain& other )
-		{
-			std::cout << "Brain assignment copy called" << std::endl;
-			if (this != &other)
-			{
-				for (int i = 0; i < 100; i++)
-					this->_ideas[i] = other._ideas[i];
-			}
-			return *this;
-		}
+		Brain& operator=( const Brain& other );
+		
 	private:
 		std::string _ideas[100];
 };
