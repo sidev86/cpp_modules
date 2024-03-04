@@ -1,16 +1,16 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
+# include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
-	
 	public:
-		AMateria(std::string const & type);
-
+		Ice(void);
+		~Ice(void);
 		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif
