@@ -16,7 +16,18 @@ ScavTrap::ScavTrap(const std::string& _name) : ClapTrap(_name)
 void ScavTrap::guardGate(void)
 {
 	std::cout << "Scavtrap " << this->_name << " is now in gate keeper mode" << std::endl; 
-} 
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->_ep > 0)
+	{
+		std::cout << "Scavtrap-> " << this->_name << " attacks " << target << " by doing " << this->_damage << " points of damage" << std::endl;
+		this->_ep -= 1;
+	}
+	else
+		std::cout << this->_name << " can't attack. no energy " << std::endl;
+}
 
 ScavTrap::~ScavTrap(void)
 {
