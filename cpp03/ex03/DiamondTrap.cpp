@@ -15,7 +15,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), Sca
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Diamondtrap destructor" << std::endl;
+	std::cout << "Destructor (diamondtrap)" << std::endl;
 }
 
 

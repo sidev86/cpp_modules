@@ -4,7 +4,7 @@
 
 int main() 
 {
-	// Testing FragTrap
+	// Testing DiamondTrap
 	{
 		DiamondTrap diamond1("Diamond 1");
 		DiamondTrap diamond2("Diamond 2");
@@ -17,7 +17,6 @@ int main()
 		diamond2.takeDamage(10);
 		diamond2.getHealthPoints();
 		diamond2.beRepaired(5);
-	
 	}
 	return 0;
 }

@@ -10,6 +10,7 @@ class FragTrap : public ClapTrap
 		FragTrap( void );
 		FragTrap( const std::string& _name );
 		
+		void attack(const std::string& target);
 		void highFivesGuys( void );
 		~FragTrap( void ); 
 };

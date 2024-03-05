@@ -18,6 +18,18 @@ void FragTrap::highFivesGuys(void)
 	std::cout << "FragTrap " << this->_name << " is so pumped! (Makin' high fives to the guys)" << std::endl; 
 } 
 
+void FragTrap::attack(const std::string& target)
+{
+	if (this->_ep > 0)
+	{
+		std::cout << "Fragtrap-> " << this->_name << " attacks " << target << " by doing " << this->_damage << " points of damage" << std::endl;
+		this->_ep -= 1;
+	}
+	else
+		std::cout << this->_name << " can't attack. no energy " << std::endl;
+}
+
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << "Destructor (fragtrap)" << std::endl;
