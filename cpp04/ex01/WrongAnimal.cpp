@@ -25,7 +25,7 @@ void WrongAnimal::makeSound(void) const
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal& other )
 {
 	if (this != &other)
-		*this = other;
+		this->_type = other._type;
 	return *this;
 }
 

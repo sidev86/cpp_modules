@@ -6,7 +6,7 @@ AAnimal::AAnimal(void)
 	std::cout << "Default constructor (AAnimal) called" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal& other)
+AAnimal::AAnimal(const AAnimal& other) : _type(other._type)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
@@ -19,7 +19,14 @@ std::string AAnimal::getType(void) const
 
 void AAnimal::makeSound(void) const
 {
-	std::cout << "Generic AAnimal sound" << std::endl;
+	std::cout << "AAnimal sound" << std::endl;
+}
+
+AAnimal& AAnimal::operator=( const AAnimal& other )
+{
+	if (this != &other)
+		this->_type = other._type; 
+	return *this;
 }
 
 AAnimal::~AAnimal(void)

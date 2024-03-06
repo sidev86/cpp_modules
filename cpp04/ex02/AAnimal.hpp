@@ -11,15 +11,9 @@ class AAnimal
 		virtual void makeSound( void ) const = 0;
 		std::string getType( void ) const;
 		virtual ~AAnimal( void );
+		AAnimal& operator=( const AAnimal& other );
 	protected:
 		std::string _type;
-	
-	AAnimal& operator=( const AAnimal& other )
-	{
-		if (this != &other)
-			*this = other; 
-		return *this;
-	}
 };
 
 #endif

@@ -10,16 +10,10 @@ class WrongAnimal
 		WrongAnimal( const WrongAnimal& other );
 		void makeSound( void ) const;
 		std::string getType( void ) const;
-		~WrongAnimal( void );
+		virtual ~WrongAnimal( void );
+		WrongAnimal& operator=( const WrongAnimal& other );
 	protected:
-		std::string _type;
-	
-	WrongAnimal& operator=( const WrongAnimal& other )
-	{
-		if (this != &other)
-			*this = other; 
-		return *this;
-	}
+		std::string _type;	
 };
 
 #endif

@@ -8,12 +8,12 @@ class Cat : public AAnimal
 {
 	public:
 		Cat( void );
+		Cat ( const Cat& other );
 		void makeSound( void ) const;	
 		~Cat( void );
+		Cat& operator=( const Cat& other );
 	private:
 		Brain* _brain;
-		
-	Cat& operator=( const Cat& other );
 };
 
 #endif

@@ -8,7 +8,7 @@ Animal::Animal(void)
 
 Animal::Animal(const Animal& other) : _type(other._type)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 }
 
 std::string Animal::getType(void) const

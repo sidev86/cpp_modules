@@ -11,10 +11,11 @@ class Animal
 		virtual void makeSound( void ) const;
 		std::string getType( void ) const;
 		virtual ~Animal( void );
+		Animal& operator=( const Animal& other );
 	protected:
 		std::string _type;
 			
-	Animal& operator=( const Animal& other );
+	
 };
 
 #endif
