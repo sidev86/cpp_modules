@@ -5,16 +5,18 @@ Bureaucrat::Bureaucrat(void) : _name("none"), _grade(150)
 	std::cout << "Default Constructor called" << std::endl;
 }
 
+Bureaucrat::~Bureaucrat() 
+{
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) 
 {
 	if (grade < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	else if (grade > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->_grade = grade;
 }
-
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) 
 {
@@ -22,9 +24,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
 	*this = other;
 }
 
-Bureaucrat::~Bureaucrat() {}
-
-const std::string& Bureaucrat::getName() const 
+const std::string Bureaucrat::getName() const 
 {
 	return this->_name;
 }
@@ -37,7 +37,7 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::incrementGrade() 
 {
 	if (this->_grade == 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw GradeTooHighException();
 	this->_grade--;
 }
 
@@ -45,22 +45,32 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::decrementGrade() 
 {
 	if (this->_grade == 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw GradeTooLowException();
 	this->_grade++;
 }
 
 
-void Bureaucrat::signForm(const Form& form)
+void Bureaucrat::signForm(Form& form)
 {
-	if (form.getFormSignCheck() == true)
-		std::cout << this.getName() << " signed " << form.getFormName() << std::endl;
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getFormName() << std::endl;
+	}
+	catch (const Form::GradeTooLowException& e)
+	{
+		std::cout << getName() << " couldn't sign " << form.getFormName() << " because " << e.what() << std::endl;
+	
+	}
+	/*if (form.getFormSignCheck() == true)
+		std::cout << this->getName() << " signed " << form.getFormName() << std::endl;
 	else
 	{
 		if (this->_grade > form.getFormSignGrade()) 
 			std::cout << this->_name << " couldn't sign " <<  form.getFormName() << " because bureaucrat grade isn't enough to sign this form" << std::endl;
 		else if (this->_grade < 1 || this->_grade > 150)
 			std::cout << this->_name << " couldn't sign " <<  form.getFormName() << " because bureaucrat grade is out of range" << std::endl;
-	}
+	}*/
 
 }
 

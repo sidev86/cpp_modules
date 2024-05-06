@@ -1,54 +1,54 @@
 #include "Form.hpp"
 
-Form::Form(void) 
+Form::Form(void) : _name("none"), _sign_grade(150), _exec_grade(150)
 {
 
 }
 
-Form::Form(const std::string &name, const int &sign_grade, const int &exec_grade) 
+Form::Form(const std::string &name, int sign_grade, int exec_grade) : _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
+	//this->_sign_grade = sign_grade;
+	//this->_exec_grade = exec_grade;
+	//this->_name = name; 
+	this->_signed = false;
 	if (sign_grade < 1 || exec_grade < 1)
 		throw Form::GradeTooHighException();
 	else if (sign_grade > 150 || exec_grade > 150)
 		throw Form::GradeTooLowException();
-	this->_sign_grade = sign_grade;
-	this->_exec_grade = exec_grade;
-	this->_name = name; 
-	this->_signed = false;
+	
 }
 
-Form::Form(const Form& other)
+/*Form::Form(const Form& other)
 {
 	*this = other;
-}
+}*/
 
-const std::string& Form::getFormName()
+const std::string& Form::getFormName() const
 {
 	return this->_name;
 }
 
-bool& Form::getFormSignCheck()
+bool Form::getFormSignCheck() const
 {
 	return this->_signed;
 }
 		
-const int& Form::getFormSignGrade()
+int Form::getFormSignGrade() const
 {
 	return this->_sign_grade;
 }
 		
-const int& getFormExecGrade()
+int Form::getFormExecGrade() const
 {
 	return this->_exec_grade;
 }
 		
-bool& beSigned(const Bureaucrat &bureacrat)
+void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= this->_sign_grade)
 		this->_signed = true;
 	else
-		throw Form::GradeTooLowException();
-	return this->_signed;
+		throw GradeTooLowException();
 }
 
 Form::~Form() 
@@ -71,15 +71,12 @@ Form& Form::operator=(const Form& other)
 {
 	if (this != &other) 
 	{
-		this->_name = other.getFormName();
 		this->_signed = other.getFormSignCheck();
-		this->_sign_grade = other.getFormSignGrade();
-		this->_exec_grade = other.getFormExecGrade();
 	}
 	return *this;
 }
 
 std::ostream& operator<<(std::ostream &out, const Form &form) {
-    out << "Form informations:\n Name: " << form.getFormName() << "\nSigned:  " << form.getFormSignCheck() << "\nSign grade: " << form.getFormSignGrade() << "\nExecution grade: " << form.getFormExecGrade() << std:endl;
+    out << "Form informations:\nName: " << form.getFormName() << "\nSigned:  " << form.getFormSignCheck() << "\nSign grade: " << form.getFormSignGrade() << "\nExecution grade: " << form.getFormExecGrade() << std::endl;
     return out;
 }
