@@ -42,12 +42,13 @@ const int& getFormExecGrade()
 	return this->_exec_grade;
 }
 		
-bool& beSigned(Bureaucrat &bureacrat)
+bool& beSigned(const Bureaucrat &bureacrat)
 {
 	if (bureaucrat.getGrade() <= this->_sign_grade)
 		this->_signed = true;
 	else
 		throw Form::GradeTooLowException();
+	return this->_signed;
 }
 
 Form::~Form() 

@@ -1,8 +1,12 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
+# include "Bureaucrat.hpp"
 
-class Form{
+class Bureaucrat;
+
+class Form
+{
 	private:
 		const std::string _name; 
 		bool	_signed;
@@ -18,7 +22,7 @@ class Form{
 		bool& getFormSignCheck(); 
 		const int& getFormSignGrade(); 
 		const int& getFormExecGrade();
-		bool& beSigned(Bureaucrat &bureacrat);
+		bool& beSigned(const Bureaucrat &bureacrat);
 	
 	class GradeTooHighException : public std::exception {
 	public:
@@ -29,9 +33,6 @@ class Form{
 	public:
 		virtual const char* what() const throw();
 	};	
-
-
-
 };
 
 std::ostream& operator<<(std::ostream &out, const Form &form); 
