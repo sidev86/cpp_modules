@@ -1,12 +1,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("none"), _grade(150) 
-{
-	std::cout << "Default Constructor called" << std::endl;
-}
-
-Bureaucrat::~Bureaucrat() 
-{
+{	
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) 
@@ -18,10 +13,12 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) 
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) 
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+}
+
+Bureaucrat::~Bureaucrat() 
+{
 }
 
 const std::string Bureaucrat::getName() const 
@@ -62,16 +59,6 @@ void Bureaucrat::signForm(Form& form)
 		std::cout << getName() << " couldn't sign " << form.getFormName() << " because " << e.what() << std::endl;
 	
 	}
-	/*if (form.getFormSignCheck() == true)
-		std::cout << this->getName() << " signed " << form.getFormName() << std::endl;
-	else
-	{
-		if (this->_grade > form.getFormSignGrade()) 
-			std::cout << this->_name << " couldn't sign " <<  form.getFormName() << " because bureaucrat grade isn't enough to sign this form" << std::endl;
-		else if (this->_grade < 1 || this->_grade > 150)
-			std::cout << this->_name << " couldn't sign " <<  form.getFormName() << " because bureaucrat grade is out of range" << std::endl;
-	}*/
-
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() 

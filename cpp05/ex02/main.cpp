@@ -11,7 +11,7 @@ int main() {
         std::cout << "Bureaucrat: " << bureaucrat << std::endl;
 
         // Creazione di un ShrubberyCreationForm
-        ShrubberyCreationForm shrubberyForm("home");
+        ShrubberyCreationForm shrubberyForm("albero");
         std::cout << "Shrubbery Creation Form: " << shrubberyForm.getAFormName() << std::endl;
 
         // Creazione di un RobotomyRequestForm
@@ -28,6 +28,7 @@ int main() {
 
         // Test di firma e esecuzione di RobotomyRequestForm
         bureaucrat.signForm(robotomyForm);
+        bureaucrat.executeForm(robotomyForm);
         bureaucrat.executeForm(robotomyForm);
 
         // Test di firma e esecuzione di PresidentialPardonForm

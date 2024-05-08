@@ -3,8 +3,9 @@
 
 int main() {
     try {
-        Bureaucrat bob("Bob", 5);
+        Bureaucrat bob("Bob", 2);
         Bureaucrat p;
+        p = bob;
         std::cout << bob << std::endl;
         std::cout << p << std::endl;
 

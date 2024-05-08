@@ -2,9 +2,7 @@
 
 Bureaucrat::Bureaucrat(void) : _name("none"), _grade(150) 
 {
-	std::cout << "Default Constructor called" << std::endl;
 }
-
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) 
 {
@@ -15,11 +13,8 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-
-Bureaucrat::Bureaucrat(const Bureaucrat& other) 
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade) 
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
 }
 
 Bureaucrat::~Bureaucrat() {}
@@ -61,6 +56,10 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) 
 {
+	if (other._grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (other._grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	if (this != &other) 
 	{
 		this->_grade = other.getGrade();
@@ -69,7 +68,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 }
 
 
-// Overloading insertion operator
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
     out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return out;

@@ -1,10 +1,35 @@
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request Form", 72, 45), _target("none") 
+{
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("Robotomy Request Form", 72, 45), _target(target) 
 {
 
 }
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("Robotomy Request Form", 72, 45)
+{
+	this->_target = other._target;
+}
+
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) 
+{
+	if (this != &other) 
+	{
+		this->_target = other._target;
+	}
+	return *this;
+}
+
+
+RobotomyRequestForm:: ~RobotomyRequestForm()
+{
+}
+
 
 void RobotomyRequestForm::execute() const 
 {

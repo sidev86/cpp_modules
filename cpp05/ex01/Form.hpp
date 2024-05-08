@@ -16,7 +16,7 @@ class Form
 	public:
 		Form( void );
 		Form(const std::string &name, int sign_grade, int exec_grade);
-		//Form(const Form& other);
+		Form(const Form& other);
 		~Form();
 		const std::string& getFormName() const;
 		int getFormSignGrade() const; 

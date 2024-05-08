@@ -8,6 +8,15 @@ Intern::Intern()
  
 }
 
+Intern::Intern( const Intern& other ) 
+{
+    *this = other;
+}
+
+Intern::~Intern() {}
+
+
+
 AForm *Intern::makeForm(const std::string &formName, const std::string &target) 
 {
 	std::string formNames[] = {"Robotomy Request", "Presidential Pardon", "Shrubbery Creation"};
@@ -29,6 +38,8 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target)
 	return NULL;
 }
 
-Intern::~Intern()
+Intern& Intern::operator=( const Intern& other ) 
 {
+    ( void ) other;
+    return (*this);
 }
