@@ -7,9 +7,6 @@ AForm::AForm(void) : _name("none"), _sign_grade(150), _exec_grade(150)
 
 AForm::AForm(const std::string &name, int sign_grade, int exec_grade) : _name(name), _sign_grade(sign_grade), _exec_grade(exec_grade)
 {
-	//this->_sign_grade = sign_grade;
-	//this->_exec_grade = exec_grade;
-	//this->_name = name; 
 	this->_signed = false;
 	if (sign_grade < 1 || exec_grade < 1)
 		throw AForm::GradeTooHighException();
@@ -18,10 +15,10 @@ AForm::AForm(const std::string &name, int sign_grade, int exec_grade) : _name(na
 	
 }
 
-/*AForm::AForm(const Form& other)
+
+AForm::AForm(const AForm& other) : _name(other.getAFormName()), _sign_grade(other.getAFormSignGrade()), _exec_grade(other.getAFormExecGrade()) 
 {
-	*this = other;
-}*/
+}
 
 const std::string& AForm::getAFormName() const
 {
