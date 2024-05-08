@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/08 11:11:47 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/05/08 11:11:48 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AForm.hpp"
 
 AForm::AForm(void) : _name("none"), _sign_grade(150), _exec_grade(150)
@@ -57,7 +69,7 @@ void AForm::execute(Bureaucrat const & executor) const {
         throw GradeTooLowException();
     }
 
-    execute(); // Chiamata al metodo virtuale puro
+    execute();
 }
 
 AForm::~AForm() 

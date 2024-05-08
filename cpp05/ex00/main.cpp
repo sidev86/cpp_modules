@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/08 11:08:45 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/05/08 11:08:47 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Bureaucrat.hpp"
 
@@ -15,7 +27,7 @@ int main() {
         bob.decrementGrade();
         std::cout << bob << std::endl;
 
-        // Trying to create a bureaucrat with invalid grade
+        
         Bureaucrat alice("Alice", 1);
         std::cout << alice << std::endl;
         
