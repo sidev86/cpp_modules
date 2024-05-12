@@ -128,7 +128,7 @@ void ScalarConverter::convert(const std::string& input)
 		
 		if (int_val >= 33 && int_val <= 126)
 			std::cout << "char: " << c << std::endl;
-		else if (std::atof(input.c_str()) < 0 || std::atof(input.c_str()) > 127)
+		else if (std::atof(input.c_str()) < -128 || std::atof(input.c_str()) > 127)
 			std::cout << "char: overflow"<< std::endl;
 		else
 			std::cout << "char: Non displayable" << std::endl;
@@ -155,8 +155,19 @@ void ScalarConverter::convert(const std::string& input)
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << input.c_str() << "f" << std::endl;
-		std::cout << "double: " << input.c_str() << std::endl;
+		
+		if (input == "nanf" || input == "+inff" || input == "-inff")
+			std::cout << "float: " << input.c_str() << std::endl;
+		else 
+			std::cout << "float: " << input.c_str() << "f" << std::endl;
+		if (input == "nanf")
+			std::cout << "double: nan" << std::endl;
+		else if (input == "+inff")
+			std::cout << "double: +inf" << std::endl;
+		else if (input == "-inff")
+			std::cout << "double: -inf" << std::endl;
+		else
+			std::cout << "double: " << input.c_str() << std::endl;
 	}
 }
 
