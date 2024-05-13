@@ -1,8 +1,4 @@
 #include "ScalarConverter.hpp"
-#include <string>
-#include <cstdlib>
-#include <climits>
-#include <cfloat>
 
 void error_message()
 {
@@ -114,19 +110,19 @@ void ScalarConverter::convert(const std::string& input)
 		check_input(input);
 		check_decimal_point(input);
 		int int_val = std::atoi(input.c_str());
-		float float_val = std::atof(input.c_str());
 		double double_val = std::atof(input.c_str());
+		
 	
-		char c = static_cast<char>(int_val); // Per ottenere il primo carattere della stringa
-		int i = static_cast<int>(int_val);  // Converti in int
-		float f = static_cast<float>(float_val); // Converti in float
+		char c = static_cast<char>(int_val);
+		int i = static_cast<int>(int_val);  
+		float f = static_cast<float>(double_val); 
 		double d = static_cast<double>(double_val);
 		
 		int t = 0;
 		int pointed = 0;
 		int zero_dec = 0;
 		
-		if (int_val >= 33 && int_val <= 126)
+		if (i >= 33 && i <= 126)
 			std::cout << "char: " << c << std::endl;
 		else if (std::atof(input.c_str()) < -128 || std::atof(input.c_str()) > 127)
 			std::cout << "char: overflow"<< std::endl;

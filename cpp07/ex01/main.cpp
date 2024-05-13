@@ -11,7 +11,7 @@ int main()
 {
 	int intArray[] = {1, 2, 3, 4, 5};
 	char charArray[] = {'a', 'b', 'c', 'd', 'e'};
-	const std::string stringArray[] = {"pippo", "pluto"};
+	const std::string stringArray[] = {"scuba", "steve"};
 	double doubleArray[] = {1.1, 2.2, 3.3, 4.4, 5.5};
 
 	// Utilizzo di iter con la funzione di callback printElement

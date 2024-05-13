@@ -8,8 +8,6 @@ int main()
 	identify(cl);
 	identify(cl2);
 	
-	
 	delete cl;
-
-
+	delete cl2;
 }

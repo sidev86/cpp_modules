@@ -3,7 +3,7 @@
 Base* generate() 
 {
     std::srand(static_cast<unsigned int>(std::time(NULL)));
-    int randomNumber = rand() % 3;
+    int randomNumber = rand() % 4;
     switch (randomNumber) 
     {
         case 0:
@@ -18,9 +18,7 @@ Base* generate()
 }
 
 void identify(Base* p) 
-{
-    //bool error = false; 
-    
+{   
     if (dynamic_cast<A*>(p) != NULL)
         std::cout << "A" << std::endl;
     else if (dynamic_cast<B*>(p) != NULL)

@@ -14,8 +14,9 @@ int main()
 	}
 	std::cout << "Size of intArray: " << intArray.size() << std::endl;
 	std::cout << "Contents of intArray: ";
-	for (unsigned int i = 0; i < intArray.size(); ++i) {
-	std::cout << intArray[i] << " ";
+	for (unsigned int i = 0; i < intArray.size(); ++i) 
+	{
+		std::cout << intArray[i] << " ";
 	}
 	std::cout << std::endl;
 	
@@ -27,8 +28,9 @@ int main()
 	}
 	std::cout << "Size of floatArray: " << floatArray.size() << std::endl;
 	std::cout << "Contents of floatArray: ";
-	for (unsigned int i = 0; i < floatArray.size(); ++i) {
-	std::cout << floatArray[i] << " ";
+	for (unsigned int i = 0; i < floatArray.size(); ++i) 
+	{
+		std::cout << floatArray[i] << " ";
 	}
 	std::cout << std::endl;
 
@@ -38,8 +40,9 @@ int main()
 	std::cout << "Contents of copiedArray: ";
 	// MODIFICO VALORE DI ARRAY COPIA
 	//copiedArray[0] = 100;
-	for (unsigned int i = 0; i < copiedArray.size(); ++i) {
-	std::cout << copiedArray[i] << " ";
+	for (unsigned int i = 0; i < copiedArray.size(); ++i) 
+	{
+		std::cout << copiedArray[i] << " ";
 	}
 	std::cout << std::endl;
 
@@ -48,17 +51,20 @@ int main()
 	assignedArray = intArray;
 	std::cout << "Size of assignedArray: " << assignedArray.size() << std::endl;
 	std::cout << "Contents of assignedArray: ";
-	for (unsigned int i = 0; i < assignedArray.size(); ++i) {
-	std::cout << assignedArray[i] << " ";
+	for (unsigned int i = 0; i < assignedArray.size(); ++i) 
+	{
+		std::cout << assignedArray[i] << " ";
 	}
 	std::cout << std::endl;
 
 	// TEST PER GESTIONE EXCEPTION
-	try {
-	std::cout << "Trying to access an out-of-range element: " << intArray[intArray.size()] << std::endl;
-	} catch (const std::out_of_range& e) 
+	try 
 	{
-	std::cerr << "Exception caught: " << e.what() << std::endl;
+		std::cout << "Trying to access an out-of-range element: " << intArray[intArray.size()] << std::endl;
+	} 
+	catch (const std::out_of_range& e) 
+	{
+		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
 
 	return 0;

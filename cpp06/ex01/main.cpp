@@ -14,6 +14,8 @@ int main()
     std::cout << "Original Data pointer -> " << ptr_data << std::endl;
     std::cout << "Serialized pointer -> " << serializedPtr << std::endl;
     std::cout << "Deserialized pointer -> " << deserializedPtr << std::endl;
+    
+    //std::cout << "Person age -> " << deserializedPtr->age << std::endl;
 
     if (ptr_data == deserializedPtr) 
     {
