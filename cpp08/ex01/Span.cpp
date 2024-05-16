@@ -1,6 +1,20 @@
 #include "Span.hpp"
 
+Span::Span() : _numbers(0)
+{
+}
+
 Span::Span(unsigned int N) : _N(N)
+{
+
+}
+
+Span::Span(const Span& other) : _N(other._N), _numbers(other._numbers)
+{
+	
+}
+
+Span::~Span()
 {
 
 }
@@ -9,7 +23,7 @@ void Span::addNumber(int num)
 {
 	if (this->_numbers.size() >= this->_N)
 	{
-		throw std::runtime_error("Cannot add more numbers. Container is full");
+		throw FullContainerException();
 	}
 	this->_numbers.push_back(num);
 }
@@ -18,7 +32,7 @@ int Span::shortestSpan()
 {
 	if (this->_numbers.size() <= 1)
 	{
-		throw std::runtime_error("Cannot find shortest span. Too few numbers");
+		throw ShortestSpanException();
 	}
 	std::sort(this->_numbers.begin(), this->_numbers.end()); 
 	int minSpan = this->_numbers[1] - this->_numbers[0];
@@ -39,7 +53,7 @@ int Span::longestSpan()
 {
 	if (this->_numbers.size() <= 1)
 	{
-		throw std::runtime_error("Cannot find shortest span. Too few numbers");
+		throw LongestSpanException();
 	}
 	std::sort(this->_numbers.begin(), this->_numbers.end());
         return this->_numbers.back() - this->_numbers.front();
@@ -50,7 +64,7 @@ void Span::addNumbers(unsigned int count)
 {
 	if (this->_numbers.size() + count > this->_N) 
 	{
-	    throw std::overflow_error("Cannot add more numbers, Span would exceed its capacity");
+	    throw FullContainerException();
 	}
 
 	srand(time(NULL));
@@ -60,7 +74,7 @@ void Span::addNumbers(unsigned int count)
 	    int randomNum;
 	    do 
 	    {
-		randomNum = rand() % 100000;
+		randomNum = rand() % 100;
 	    } 
 	    while (std::find(this->_numbers.begin(), this->_numbers.end(), randomNum) != this->_numbers.end());
 	    
@@ -69,8 +83,39 @@ void Span::addNumbers(unsigned int count)
 }
 
 
-Span::~Span()
+void Span::printNumbers()
 {
-
+	for (int i = 0; i < (int)this->_numbers.size(); i++)
+	{
+		std::cout << this->_numbers[i] << std::endl;
+	}
 }
+
+const Span&	Span::operator=(const Span& other)
+{
+	if (this != &other)
+	{
+		this->_N = other._N;
+		this->_numbers = other._numbers;
+	}
+	return (*this);
+}
+
+
+const char* Span::FullContainerException::what() const throw() 
+{
+    return "Cannot add numbers! Container is full";
+}
+
+const char* Span::ShortestSpanException::what() const throw() 
+{
+    return "Cannot find shortest span. Too few numbers";
+}
+
+const char* Span::LongestSpanException::what() const throw() 
+{
+    return "Cannot find longest span. Too few numbers";
+}
+
+
 

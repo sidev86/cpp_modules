@@ -1,5 +1,6 @@
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
+
 # include <iostream>
 # include <vector>
 # include <list>
@@ -28,9 +29,6 @@ typename T::iterator easyfind(T& container, int number)
 		throw ValueNotFoundException();
 	}
 }
-
-
-
 
 
 #endif 
