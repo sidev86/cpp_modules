@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/26 10:20:40 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/02/26 10:20:42 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Point.hpp"
 
 Point::Point(void) : _x(0), _y(0)
@@ -16,8 +28,8 @@ const Point& Point::operator=(const Point& other) const
 {
 	if (this != &other)
 	{
-		//this->_x = other._x;
-		//this->_y = other._y;
+		(Fixed)this->_x = other.getX();
+		(Fixed)this->_y = other.getY();
 	}
 	return *this;
 }

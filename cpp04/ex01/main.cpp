@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 10:33:55 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/03/06 10:33:57 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
@@ -10,7 +22,7 @@ int main()
 	const Animal* i = new Cat();
 	
 
-	delete j;//should not create a leak
+	delete j;
 	delete i;
 	
 	std::cout << "-------------------\n" << std::endl;

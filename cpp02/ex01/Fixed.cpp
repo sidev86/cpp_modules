@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sibrahim <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/26 10:18:14 by sibrahim          #+#    #+#             */
+/*   Updated: 2024/02/26 10:18:17 by sibrahim         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed( void )
@@ -17,14 +29,12 @@ Fixed::Fixed(const float float_num)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->_fixed_num = (roundf(float_num * (1 << _fract_bits)));
-	//std::cout << this->_fixed_num << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
-	//this->_fixed_num = other.getRawBits();
 }
 
 Fixed::~Fixed( void )
