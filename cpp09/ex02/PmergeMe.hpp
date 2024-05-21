@@ -32,12 +32,25 @@ class PmergeMe
 		int binarySearch(Container& cont, int key, int low, int high);
 		template <typename Container>
 		void insertSorted(Container& cont, int element) ;
-	
+		bool validArguments(int argc, char **argv);
 	public: 
 		PmergeMe();
 		PmergeMe(int argc, char **argv);
+		PmergeMe(const PmergeMe& other);
 		~PmergeMe();
+		
 		void mergeInsertionSort(int argc, char **argv);
+		PmergeMe& operator=(const PmergeMe& other);
+		
+		class InvalidArgumentException : public std::exception {
+			public:
+				const char*	what() const throw();
+		};
+
+		class ArgumentsNumberException : public std::exception {
+			public:
+				const char*	what() const throw();
+		};
 };
 
 

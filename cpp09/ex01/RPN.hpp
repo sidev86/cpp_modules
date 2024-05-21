@@ -10,12 +10,16 @@
 class RPN 
 {
 	public:
+		RPN();
+		RPN(const RPN& other);
 		RPN(const std::string& expression);
+		~RPN();
 		int calculate(); 
+		
+		RPN& operator=(RPN const &other);
 	private:
 		std::string _expression;
-		std::stack<int> stack; 
-		
+		std::stack<int> _stack; 
 		
 		void processToken(const std::string& token); 
 

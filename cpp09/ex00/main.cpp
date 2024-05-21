@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 				float bitcoinValue = exchange.getBitcoinValue(date);
 				if (bitcoinValue != -1.0f)
 					std::cout << date << " => " << value << " = " << value * bitcoinValue << std::endl;
-
 			} 
 			else 
 			{
@@ -59,6 +58,5 @@ int main(int argc, char *argv[])
 		}
 	}
 	inputFile.close();
-
 	return 0;
 }

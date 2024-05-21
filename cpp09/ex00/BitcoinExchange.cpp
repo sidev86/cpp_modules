@@ -5,12 +5,32 @@
 #include <iostream>
 #include <cstdlib>
 
+BitcoinExchange::BitcoinExchange()
+{
+}
+
 BitcoinExchange::BitcoinExchange(const std::string& databaseFile)
 {
 	loadDatabase(databaseFile);
 }
 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
+{
+	*this = other;
+}
 
+BitcoinExchange::~BitcoinExchange()
+{
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
+{
+    if (this != &other)
+    {
+        _priceDatabase = other._priceDatabase;
+    }
+    return *this;
+}
 
 bool BitcoinExchange::dateValid(const std::string& date)
 {
