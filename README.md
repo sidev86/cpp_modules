@@ -26,7 +26,7 @@ Each exercise focuses on a specific topic, ensuring that learners can gradually 
     <li><code>new</code> and <code>delete</code></li>
     <li>References</li>
     <li>Filestream</li>
-    <li>Ad-hoc polymorphism</li>
+    <li>Polymorphism</li>
     <li>Operator overload</li>
     <li>Canonical form</li>
     <li>Inheritance in C++</li>
