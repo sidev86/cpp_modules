@@ -53,7 +53,7 @@ Each exercise focuses on a specific topic, ensuring that learners can gradually 
 </ul>
 
 
-<h2>Compilation insttructions (linux)</h2>
+<h2>Compilation instructions (linux)</h2>
 
 Each exercise has its own Makefile that will produce its executable. To run a program related to an exercise,
 enter the folder corresponding to the program you want to execute, and type <code>make</code> to build the executable.
