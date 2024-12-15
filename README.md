@@ -14,16 +14,16 @@ Each exercise focuses on a specific topic, ensuring that learners can gradually 
     <li>Stdio streams</li>
     <li>Class and instance</li>
     <li>Member attributes and member functions</li>
-    <li>this</li>
+    <li><code>this</code> keyword</li>
     <li>Initialization list</li>
-    <li>const</li>
+    <li><code>const</code> type</li>
     <li>Visibility</li>
     <li>Class vs struct</li>
     <li>Accessors</li>
     <li>Comparisons</li>
     <li>Non-member attributes and non-member functions</li>
     <li>Pointers to members</li>
-    <li>new and delete</li>
+    <li><code>new</code> and <code>delete</code></li>
     <li>References</li>
     <li>Filestream</li>
     <li>Ad-hoc polymorphism</li>
@@ -35,19 +35,19 @@ Each exercise focuses on a specific topic, ensuring that learners can gradually 
     <li>Nested classes</li>
     <li>Exceptions</li>
     <li>Type conversion</li>
-    <li>From C - Type reinterpretation</li>
-    <li>From C - Type qualifier reinterpretation</li>
+    <li>Type reinterpretation</li>
+    <li>Type qualifier reinterpretation</li>
     <li>Upcast and downcast</li>
     <li>Static cast</li>
     <li>Dynamic cast</li>
     <li>Reinterpret cast</li>
     <li>Const cast</li>
     <li>Cast operators</li>
-    <li>explicit keyword</li>
+    <li><code>explicit</code> keyword</li>
     <li>Templates</li>
     <li>Default type</li>
     <li>Specialization</li>
-    <li>From C - Parametric macros</li>
+    <li>Parametric macros</li>
     <li>STL</li>
   
 </ul>
