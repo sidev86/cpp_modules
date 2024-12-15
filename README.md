@@ -1,7 +1,7 @@
 <h1>C++ Modules</h1>
 
 <h2>Description</h2>
-This collection of small programs is designed by 42 to help you learn and practice the core concepts of Object-Oriented Programming (OOP) in C++.
+This collection of mini-projects is designed to help you learn and practice the core concepts of Object-Oriented Programming (OOP) in C++.
 The exercises are implemented following the C++98 standard to simplify the learning process, given the complexity of the language.
 
 <h2>Purpose</h2>
