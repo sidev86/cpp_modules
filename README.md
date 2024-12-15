@@ -29,7 +29,7 @@ Each exercise focuses on a specific topic, ensuring that learners can gradually 
     <li>Polymorphism</li>
     <li>Operator overload</li>
     <li>Canonical form</li>
-    <li>Inheritance in C++</li>
+    <li>Inheritance</li>
     <li>Sub-typing polymorphism</li>
     <li>Abstract classes and interfaces</li>
     <li>Nested classes</li>
